@@ -12,6 +12,8 @@ As a contributor, you should:
 2. add yourself as a contributor on any questions you are interested in,
 3. edit the pages of those questions, to add/amend details.
 
+See below for instructions on how to do all of this.
+
 ## Editing a file on GitHub
 
 1. Find the file by browsing the directories above, and click on the filename to open it.
@@ -25,14 +27,14 @@ Details for each question are saved in the `_questions` folder above, with the f
 
 You can see a list of all the questions here: https://drive.google.com/file/d/1iPQ0Lb3fAf0dQDsRqK-_T-jJB53C0gEM/view?usp=sharing (note you may need to click "Open with > Google Sheets" at the top to get a more readable view).
 
-Note that the search on GitHub is also quite good, e.g. searching for "example generation" gives links to Q45 and Q46 which use these words in the question.
+The search feature on GitHub is also quite good, e.g. searching for "example generation" gives links to Q45 and Q46 which use these words in the question.
 
 
 ## Edit your profile
 
 Each contributor will have a profile page that will look something like this: https://georgekinnear.github.io/caa-agenda-testing/contributors/georgekinnear.html
 
-Your details are saved in the `_contributors' folder, in a file with your GitHub username as its filename, e.g. `georgekinnear.md`.
+Your details are saved in the `_contributors` folder, in a file with your GitHub username as its filename, e.g. `georgekinnear.md`.
 
 * The details at the top should look something like this:
 ```
@@ -45,11 +47,13 @@ affiliation: University of Edinburgh
 website: https://www.maths.ed.ac.uk/gkinnear/
 orcid: 0000-0003-4191-4258
 ```
-* then below the `---` you can provide a short bio (2-3 sentences, max 400 words).
+* then below the `---` you can provide a short bio (2-3 sentences, max 400 characters).
 
 ## Contribute to a question
 
-To add yourself as a contributor, edit the question's file to add your GitHub username to the list under the `contributors:` heading, e.g.:
+To add yourself as a contributor, edit the question file, e.g. `_questions/Q45.md`.
+
+Simply add your GitHub username to the list under the `contributors:` heading, e.g.:
 
 <pre>
 contributors: 
@@ -64,11 +68,11 @@ Most questions only have the text of the question so far. Please help to flesh o
 
 This can be informed by:
 
-* The original submission -- see the [document from our first meeting](https://drive.google.com/file/d/1bCgjSHb-bJ6tCnCEJVm7FeoiGC3FRlf_/view?usp=sharing)  which has the original proposer's full narrative (the questions had different labels then, listed under `question_code_meeting1` at the top of each question's file).
+* the original submission -- see the [document from our first meeting](https://drive.google.com/file/d/1bCgjSHb-bJ6tCnCEJVm7FeoiGC3FRlf_/view?usp=sharing)  which has the original proposer's full narrative (the questions had different labels then, listed under `question_code_meeting1` at the top of each question's file),
 
-* Comments from the survey/conferences -- you can see all of these in the [files in Google Drive](https://drive.google.com/drive/folders/1YxABNvCPs2LizUb4AhD8lTqrHq-mausG?usp=sharing)
+* comments from the survey/conferences -- you can see all of these in the [files in Google Drive](https://drive.google.com/drive/folders/1YxABNvCPs2LizUb4AhD8lTqrHq-mausG?usp=sharing),
 
-* Your own further thoughts/reading.
+* your own further thoughts/reading.
 
 ### Adding related questions
 
