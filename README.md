@@ -20,7 +20,7 @@ To edit your details:
 
 1. Click on the `_contributors' folder above.
 2. Find the file with your GitHub username as its filename, e.g. `georgekinnear.md`, and click on it.
-3. Click on the pencil icon at the top right: <span class="iconify" data-icon="octicon:pencil-24" data-inline="false"></span>
+3. Click on the pencil icon at the top right: ![Pencil icon](github-edit.png?raw=true)
 4. Make your changes in the editor window that appears:
 * The details at the top should look something like this:
 ```
