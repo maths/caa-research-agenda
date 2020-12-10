@@ -1,0 +1,41 @@
+---
+layout: page
+title: Contributors and questions
+permalink: /contributors-questions/
+---
+<table>
+<!--	<colgroup>
+	<col width="20%" />
+	<col width="80%" />
+	</colgroup>-->
+<thead>
+	<tr class="header">
+		<th>Contributor</th>
+		<th>Questions</th>
+		<th>#</th>
+	</tr>
+</thead>
+<tbody>
+
+{% assign sorted_team = site.contributors | sort:'surname' %}
+{% for contributor in sorted_team %}
+
+<tr>
+	<td><a href="{{ contributor.url | relative_url }}">{{ contributor.firstname }} {{ contributor.surname }}</a></td>
+	<td>
+	{% assign filtered_questions = site.questions | where: "contributors" , contributor.username | sort: "question_num" %}
+	{% assign filtered_questions_count = filtered_questions | size %}
+	{% if filtered_questions_count == 0 %}
+		-
+	{% else %}
+	  {% for qn in filtered_questions %}
+		<a href="{{ qn.url | relative_url }}">{{ qn.question_code }}</a>{% if forloop.last == false %}, {% endif %}
+	  {% endfor %}
+	{% endif %}
+	</td>
+	<td>{{ filtered_questions_count }}</td>
+</tr>
+
+{% endfor %}
+</tbody>
+</table>

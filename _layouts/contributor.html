@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<h1>{{ page.firstname }} {{ page.surname }}</h1>
+
+<span class="affiliation">{{ page.affiliation }}</</span>
+
+<ul>
+	<li>{{ page.username }}</li>
+	<li>{{ page.email }}</li>
+	<li>{{ page.website }}</li>
+</ul>
+
+{{ content }}
+
+<h2>Questions</h2>
+
+{% assign filtered_questions = site.questions | where: "contributors" , page.username %}
+{% assign filtered_questions_count = filtered_questions | size %}
+
+{% if filtered_questions_count == 0 %}
+	<p><i>{{ page.firstname }} has not yet contributed to any questions.</i></p>
+{% else %}
+	<p>{{ page.firstname }} is a contributor to these questions:</p>
+
+	<ul>
+	  {% for qn in filtered_questions %}
+		<li><a href="{{ qn.url | relative_url }}">{{ qn.question_text }}</a></li>
+	  {% endfor %}
+	</ul>
+{% endif %}
