@@ -22,4 +22,4 @@ Zoom: https://ed-ac-uk.zoom.us/j/83890857856 Passcode: Mcaa2021
 
 Run by Chris.
 
-Meeting details TBC.
+Zoom: https://ed-ac-uk.zoom.us/j/85877977313 Passcode: Mcaa2021
