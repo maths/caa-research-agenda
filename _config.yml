@@ -21,8 +21,8 @@
 title: Maths CAA Research Agenda
 #email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
-  A collaboratively-derived research agenda for e-assessment in teaching mathematics at university
-baseurl: "/caa-agenda-testing" # the subpath of your site, e.g. /blog
+  A collaboratively-derived research agenda for e-assessment of university mathematics
+baseurl: "/caa-research-agenda" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: georgekinnear
 #github_username:  georgekinnear
