@@ -1,5 +1,5 @@
 ---
-username: maryamalarfaj
+username: maryamarfaj
 firstname: Maryam
 surname: Alarfaj
 email: m.k.h.alarfaj@ed.ac.uk
