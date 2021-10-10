@@ -61,7 +61,19 @@ atom_feed:
   hide: true
 plugins:
   - jekyll-feed
- 
+  
+page_gen-dirs: true
+
+page_gen:
+- data: "themes"
+  template: "theme_index"
+  name: "theme_url"
+  dir: "themes"
+- data: "themes"
+  template: "subtheme_index"
+  name: "subtheme_url"
+  dir: "themes"
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
