@@ -2,7 +2,7 @@
 layout: splash
 ---
 <p style="margin-top: 1em"><a href="../" class="btn btn--inverse">Themes</a> &gt; </p>
-<h1>{{ page.theme }}</h1>
+<h1><img src="../../assets/images/bg-{{ page.theme_url }}.svg"> {{ page.theme }}</h1>
 
 {% assign theme_qs = site.data.themes | where: "theme", page.theme | sort: "question_num" %}
 
