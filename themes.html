@@ -15,47 +15,49 @@ permalink: /themes/
 	<li>{{theme_name}}</li>
 {% endfor %}
 </ul>
-<p>These themes are broken down further into smaller groups of related questions.</p>
+<p>These themes are further broken down, into smaller groups of related questions.</p>
 
 {% for theme_name in theme_names %}
 	<h2>{{ theme_name }}</h2>
+	<table style="width: 100%">
+	<!--	<colgroup>
+		<col width="20%" />
+		<col width="80%" />
+		</colgroup>-->
+	<thead>
+		<tr class="header">
+			<th>Code</th>
+			<th>Question</th>
+			<th>Contributors</th>
+		</tr>
+	</thead>
+	<tbody>
 	{% assign subthemes = site.data.themes | where: "theme", theme_name | sort: "question_num" | map: "subtheme" | uniq %}
 	{% for subtheme_name in subthemes %}
-		<h3>{{ subtheme_name }}</h3>
-		<table style="width: 100%">
-		<!--	<colgroup>
-			<col width="20%" />
-			<col width="80%" />
-			</colgroup>-->
-		<thead>
-			<tr class="header">
-				<th>Code</th>
-				<th>Question</th>
-				<th>Contributors</th>
-			</tr>
-		</thead>
-		<tbody>
+		<tr>
+			<td colspan="3">
+				<h3>{{ subtheme_name }}</h3>
+			</td>
+		</tr>
 		{% assign theme_qs = site.data.themes | where: "subtheme", subtheme_name | sort: "question_num" %}
 		{% for qn in theme_qs %}
-			{% assign the_question = site.questions | where: "question_num", qn.question_num %}
-			{% for question in the_question %}
-				<tr>
-					<!-- <td><a href="{{ question.url | relative_url }}">{{ question.question_code }}</a></td> -->
-					<td><a href="{{ question.question_code }}">{{ question.question_code }}</a></td>
-					<td>{{ question.question_text }}</td>
-					<td>    {% for contributor in question.contributors %}
-					  {% assign contrib_info = site.contributors | where: 'username', contributor | first %}
-					  {% if contrib_info %}
-						<!-- <li><a href="{{ contrib_info.url | relative_url }}"><img src="https://github.com/{{ contrib_info.username }}.png?size=100" style="border-radius: 50%;width: 1.5em;height: 1.5em;margin: auto 0.5em auto -2em;" />{{ contrib_info.firstname }} {{ contrib_info.surname }}</a></li> -->
-						<a href="{{ contrib_info.url | relative_url }}"><img src="https://github.com/{{ contrib_info.username }}.png?size=100" style="border-radius: 50%;width: 2em;height: 2em;margin: auto -0.5em auto 0em;" /></a> 
-					  {% endif %}
-					{% endfor %}</td>
-				</tr>
-			{% endfor %}
+			{% assign question = site.questions | where: "question_num", qn.question_num | first %}
+			<tr>
+				<!-- <td><a href="{{ question.url | relative_url }}">{{ question.question_code }}</a></td> -->
+				<td><a href="../questions/{{ question.question_code }}">{{ question.question_code }}</a></td>
+				<td>{{ question.question_text }}</td>
+				<td>    {% for contributor in question.contributors %}
+				  {% assign contrib_info = site.contributors | where: 'username', contributor | first %}
+				  {% if contrib_info %}
+					<!-- <li><a href="{{ contrib_info.url | relative_url }}"><img src="https://github.com/{{ contrib_info.username }}.png?size=100" style="border-radius: 50%;width: 1.5em;height: 1.5em;margin: auto 0.5em auto -2em;" />{{ contrib_info.firstname }} {{ contrib_info.surname }}</a></li> -->
+					<a href="{{ contrib_info.url | relative_url }}"><img src="https://github.com/{{ contrib_info.username }}.png?size=100" style="border-radius: 50%;width: 2em;height: 2em;margin: auto -0.5em auto 0em;" /></a> 
+				  {% endif %}
+				{% endfor %}</td>
+			</tr>
 		{% endfor %}
+	{% endfor %}
 		</tbody>
 		</table>
-	{% endfor %}
 {% endfor %}
 
 <!--
