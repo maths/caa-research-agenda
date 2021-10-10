@@ -43,7 +43,8 @@ layout: default
           <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
         {% endif %}
         {% include page__taxonomy.html %}
-        {% include page__date.html %}
+        <!-- {% include page__date.html %} -->
+		{% if page.question_num %} <i class="fab fa-fw fa-github"></i></span> <a href="https://github.com/maths/e-assessment-research-agenda/tree/main/_questions/Q{{ page.question_num }}.md">Source on GitHub</a>{% endif %}
       </footer>
 
       {% if page.share %}{% include social-share.html %}{% endif %}

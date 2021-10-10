@@ -2,9 +2,8 @@
 layout: single-notitle
 toc: true
 ---
-{% if page.theme %}
-<p><a href="" class="btn btn--inverse">{{ page.theme }}</a> &gt;  <a href="" class="btn btn--inverse">{{ page.subtheme }}</a></p>
-{% endif %}
+{% assign qn = site.data.themes | where: "question_num", page.question_num | first %}
+<p><a href="../themes/{{ qn.theme_url }}" class="btn btn--inverse">{{ qn.theme }}</a> &gt;  <a href="../themes/{{ qn.subtheme_url }}" class="btn btn--inverse">{{ qn.subtheme }}</a></p>
 
 <!-- <h1>{{ page.question_code }}: {{ page.question_text }}</h1> -->
 <p></p>
