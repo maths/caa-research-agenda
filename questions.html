@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: splash
 title: Questions
 permalink: /questions/
 ---
@@ -13,6 +13,7 @@ permalink: /questions/
 	<tr class="header">
 		<th>Code</th>
 		<th>Question</th>
+		<th>Contributors</th>
 	</tr>
 </thead>
 <tbody>
@@ -20,8 +21,16 @@ permalink: /questions/
 {% assign sorted_qs = site.questions | sort: "question_num" %}
 {% for question in sorted_qs %}
 <tr>
-	<td><a href="{{ question.url | relative_url }}">{{ question.question_code }}</a></td>
+	<!-- <td><a href="{{ question.url | relative_url }}">{{ question.question_code }}</a></td> -->
+	<td><a href="{{ question.question_code }}">{{ question.question_code }}</a></td>
 	<td>{{ question.question_text }}</td>
+	<td>    {% for contributor in question.contributors %}
+	  {% assign contrib_info = site.contributors | where: 'username', contributor | first %}
+	  {% if contrib_info %}
+		<!-- <li><a href="{{ contrib_info.url | relative_url }}"><img src="https://github.com/{{ contrib_info.username }}.png?size=100" style="border-radius: 50%;width: 1.5em;height: 1.5em;margin: auto 0.5em auto -2em;" />{{ contrib_info.firstname }} {{ contrib_info.surname }}</a></li> -->
+		<a href="{{ contrib_info.url | relative_url }}"><img src="https://github.com/{{ contrib_info.username }}.png?size=100" style="border-radius: 50%;width: 2em;height: 2em;margin: auto -0.5em auto 0em;" /></a> 
+	  {% endif %}
+    {% endfor %}</td>
 </tr>
 {% endfor %}
 </tbody>

@@ -18,11 +18,11 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Maths CAA Research Agenda
+title: Research agenda for e-assessment of university mathematics
 #email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   A collaboratively-derived research agenda for e-assessment of university mathematics
-baseurl: "/caa-research-agenda" # the subpath of your site, e.g. /blog
+baseurl: "/e-assessment-research-agenda" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: georgekinnear
 #github_username:  georgekinnear
@@ -34,11 +34,15 @@ collections:
         output: true
 
 header_pages:
-  - index.markdown
+  - index.md
   - contributors.html
   - questions.html
         
 defaults:
+  - scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "single"
   - scope:
       path: ""
       type: "contributors"
@@ -51,7 +55,10 @@ defaults:
       layout: "question"
         
 # Build settings
-theme: minima
+#theme: minima
+theme: minimal-mistakes-jekyll
+atom_feed:
+  hide: true
 plugins:
   - jekyll-feed
  

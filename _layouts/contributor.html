@@ -1,21 +1,31 @@
 ---
-layout: default
+layout: single-notitle
 ---
 <h1>{{ page.firstname }} {{ page.surname }}</h1>
 
-<span class="affiliation">{{ page.affiliation }}</</span>
+<p class="affiliation">{{ page.affiliation }}</p>
 
-<ul>
-	<li>{{ page.username }}</li>
-	<li>{{ page.email }}</li>
-	<li>{{ page.website }}</li>
+
+
+<div class="notice" style="display: flex;">
+<img src="https://github.com/{{ page.username }}.png?size=100" style="border-radius: 50%; width: 100px; height: 100px; margin: auto 1em;" />
+<ul class="fa-ul">
+	<li><span class="fa-li"><i class="far fa-envelope"></i></span> <a href="mailto:{{ page.email }}">{{ page.email }}</a></li>
+	{% if page.website %}
+	<li><span class="fa-li"><i class="fas fa-link"></i></span> <a href="{{ page.website }}">{{ page.website | remove: "https://" | remove: "http://" }}</a></li>
+	{% endif %}
+	<li><span class="fa-li"><i class="fab fa-fw fa-github"></i></span> <a href="https://github.com/{{ page.username }}">{{ page.username }}</a></li>
+	{% if page.orcid %}
+	<li><span class="fa-li"><i class="fab fa-orcid"></i></span> <a href="https://orcid.org/{{ page.orcid }}">{{ page.orcid }}</a></li>
+	{% endif %}
 </ul>
+</div>
 
 {{ content }}
 
 <h2>Questions</h2>
 
-{% assign filtered_questions = site.questions | where: "contributors" , page.username %}
+{% assign filtered_questions = site.questions | where: "contributors" , page.username | sort:'question_num' %}
 {% assign filtered_questions_count = filtered_questions | size %}
 
 {% if filtered_questions_count == 0 %}
@@ -23,9 +33,9 @@ layout: default
 {% else %}
 	<p>{{ page.firstname }} is a contributor to these questions:</p>
 
-	<ul>
+	<ul class="question_links">
 	  {% for qn in filtered_questions %}
-		<li><a href="{{ qn.url | relative_url }}">{{ qn.question_text }}</a></li>
+		<li><a href="{{ qn.url | relative_url }}">{{ qn.question_code }}: {{ qn.question_text }}</a></li>
 	  {% endfor %}
 	</ul>
 {% endif %}

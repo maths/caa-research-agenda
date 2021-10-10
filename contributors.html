@@ -1,14 +1,35 @@
 ---
-layout: page
+layout: splash
 title: Contributors
 permalink: /contributors/
 ---
+
+<h2>Core team</h2>
+<p>The core team were responsible for planning and organising the project to develop the research agenda.</p>
+
+<ul>
+  {% assign core_team = site.contributors | where: "role", "core-team" | sort:'surname' %}
+  {% for contributor in core_team %}
+    <li>
+      <h4>
+<img src="https://github.com/{{ contributor.username }}.png?size=100" style="border-radius: 50%;width: 100px;height: 100px;margin: auto 0.5em auto -2em;" />
+	  <a href="{{ contributor.url | relative_url }}">{{ contributor.firstname }} {{ contributor.surname }}</a>, {{ contributor.affiliation }}</h4>
+      {{ contributor.excerpt }}
+    </li>
+  {% endfor %}
+</ul>
+
+<h2>Contributors</h2>
+<p>In addition to the core team, the following people contributed to developing the questions in the agenda.</p>
 <ul>
   {% assign sorted_team = site.contributors | sort:'surname' %}
   {% for contributor in sorted_team %}
+  {% unless contributor.role =="core-team" %}
     <li>
-      <h4><a href="{{ contributor.url | relative_url }}">{{ contributor.firstname }} {{ contributor.surname }}</a>, {{ contributor.affiliation }}</h4>
+      <h4>
+<a href="{{ contributor.url | relative_url }}"><img src="https://github.com/{{ contributor.username }}.png?size=100" style="border-radius: 50%;width: 100px;height: 100px;margin: auto 0.5em auto -2em;" />{{ contributor.firstname }} {{ contributor.surname }}</a>, {{ contributor.affiliation }}</h4>
       {{ contributor.excerpt }}
     </li>
+	{% endunless %}
   {% endfor %}
 </ul>

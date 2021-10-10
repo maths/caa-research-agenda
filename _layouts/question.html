@@ -1,7 +1,14 @@
 ---
-layout: default
+layout: single-notitle
+toc: true
 ---
-<h1>{{ page.question_code }}: {{ page.question_text }}</h1>
+{% if page.theme %}
+<p><a href="" class="btn btn--inverse">{{ page.theme }}</a> &gt;  <a href="" class="btn btn--inverse">{{ page.subtheme }}</a></p>
+{% endif %}
+
+<!-- <h1>{{ page.question_code }}: {{ page.question_text }}</h1> -->
+<p></p>
+<h1><span class="question_num" style="font-weight:normal; font-size: 70%">Question {{ page.question_num }}</span><br>{{ page.question_text }}</h1>
 
 <ul>
 {% assign contributorCount = page.contributors | size %}
@@ -11,7 +18,7 @@ layout: default
     {% for contributor in page.contributors %}
 	  {% assign contrib_info = site.contributors | where: 'username', contributor | first %}
 	  {% if contrib_info %}
-		<li> <a href="{{ contrib_info.url | relative_url }}">{{ contrib_info.firstname }} {{ contrib_info.surname }}</a></li>
+		<li><a href="{{ contrib_info.url | relative_url }}"><img src="https://github.com/{{ contrib_info.username }}.png?size=100" style="border-radius: 50%;width: 1.5em;height: 1.5em;margin: auto 0.5em auto -2em;" />{{ contrib_info.firstname }} {{ contrib_info.surname }}</a></li>
 	  {% endif %}
     {% endfor %}
 {% endif %}
