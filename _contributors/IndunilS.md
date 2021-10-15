@@ -1,5 +1,5 @@
 ---
-username: indunil
+username: IndunilS
 firstname: Indunil
 surname: Sikurajapathi
 email: indunil.sikurajapathi@uwe.ac.uk
