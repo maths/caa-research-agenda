@@ -48,11 +48,13 @@ defaults:
       type: "contributors"
     values:
       layout: "contributor"
+      permalink: /contributors/:title
   - scope:
       path: ""
       type: "questions"
     values:
       layout: "question"
+      permalink: /questions/:title
         
 # Build settings
 #theme: minima
