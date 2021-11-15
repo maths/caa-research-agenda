@@ -24,4 +24,7 @@ The scope of possible research questions is broad, but has limits. In particular
 * **Of university mathematics** – based on topics or task-types which are relevant to mathematics as studied university.
 
 # Publication
-Reference to the preprint will go here
+
+In this manuscript, we summarise the process used to create the research agenda, and give an overview of the themes:
+
+> Kinnear, G., Jones, I., Sangwin, C., Alarfaj, M., Davies, B., Fearn, S., Foster, C., Heck, A., Henderson, K., Hunt, T., Iannone, P., Kontorovich, I., Larson, N., Lowe, T., Meyer,J. C., O’Shea, A., Rowlett, P., Sikurajapathi, I., & Wong, T (2021). A collaboratively-derived research agenda for e-assessment in university mathematics. <https://doi.org/10.35542/osf.io/ztnyd>
