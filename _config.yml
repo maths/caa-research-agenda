@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Research agenda for e-assessment of university mathematics
+title: Research agenda for e-assessment of undergraduate mathematics
 #email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   A collaboratively-derived research agenda for e-assessment of undergraduate mathematics
