@@ -2,46 +2,46 @@
 layout: splash
 title: Themes
 permalink: /themes/
-feature_row:
-  - image_path: assets/images/bg-errors-and-feedback.svg
-    alt: "Errors and feedback"
-    title: "Errors and feedback"
-    excerpt: "- Student errors\n\n - Optimising feedback efforts\n\n - Feedback design\n\n - Emulating teacher feedback"
-    url: "themes/errors-and-feedback"
-    btn_label: "Read More"
-    btn_class: "btn--primary"
-  - image_path: assets/images/bg-design-and-implementation.svg
-    alt: "Design and implementation"
-    title: "Design and implementation"
-    excerpt: "- Task design principles\n\n - Randomisation\n\n - Lecturer guidance\n\n - Roles of e-assessment in course design"
-    url: "themes/design-and-implementation"
-    btn_label: "Read More"
-    btn_class: "btn--primary"
-  - image_path: assets/images/bg-students.svg
-    alt: "Students"
-    title: "Students"
-    excerpt: "- Student views and outcomes\n\n - Student interactions\n\n - Student behaviour"
-    url: "themes/students"
-    btn_label: "Read More"
-    btn_class: "btn--primary"
-  - image_path: assets/images/bg-affordances.svg
-    alt: "Affordances"
-    title: "Affordances"
-    excerpt: "- Capabilities of e-assessment\n\n - Free-form student input\n\n - Comparative judgement"
-    url: "themes/affordances"
-    btn_label: "Read More"
-    btn_class: "btn--primary"
-  - image_path: assets/images/bg-mathematical-skills.svg
-    alt: "Mathematical skills"
-    title: "Mathematical skills"
-    excerpt: "- Problem solving\n\n - Assessment of proof\n\n - Example generation"
-    url: "themes/mathematical-skills"
-    btn_label: "Read More"
-    btn_class: "btn--primary"
 ---
+
+{% assign themes = site.data.themes | sort: "question_num" | map: "theme" | uniq %}
 
 <h1>Themes</h1>
 
 <p>The questions are grouped into 5 broad themes, which are further broken down into smaller groups of related questions:</p>
 
-{% include feature_row %}
+<div class="feature__wrapper">
+
+{% for theme in themes %}
+
+{% assign theme_slug = site.data.themes | where: "theme", theme | first | map: "theme_url" | join: "" %}
+{% assign theme_link = "/e-assessment-research-agenda/themes/" | append: theme_slug %}
+
+    <div class="feature__item">
+      <div class="archive__item">
+        
+          <div class="archive__item-teaser">
+            <a href="{{theme_link}}"><img src="/e-assessment-research-agenda/assets/images/bg-{{theme_slug}}.svg" alt="{{theme}}"><a>
+          </div>
+        
+        <div class="archive__item-body">
+            <a href="{{theme_link}}"><h2 class="archive__item-title">{{theme}}</h2></a>
+          
+            <div class="archive__item-excerpt">
+              <ul>
+	{% assign subthemes = site.data.themes | where: "theme", theme | sort: "question_num" | map: "subtheme" | uniq %}
+		{% for subtheme_name in subthemes %}
+				<li>{{subtheme_name}}</li>
+		{% endfor %}
+			  </ul>
+
+            </div>
+          
+        </div>
+      </div>
+    </div>
+
+
+{% endfor %}
+
+</div>
