@@ -27,4 +27,5 @@ The scope of possible research questions is broad, but has limits. In particular
 
 In this manuscript, we summarise the process used to create the research agenda, and give an overview of the themes:
 
-> Kinnear, G., Jones, I., Sangwin, C., Alarfaj, M., Davies, B., Fearn, S., Foster, C., Heck, A., Henderson, K., Hunt, T., Iannone, P., Kontorovich, I., Larson, N., Lowe, T., Meyer,J. C., O’Shea, A., Rowlett, P., Sikurajapathi, I., & Wong, T (2021). A collaboratively-derived research agenda for e-assessment in university mathematics. <https://doi.org/10.35542/osf.io/ztnyd>
+> Kinnear, G., Jones, I., Sangwin, C., Alarfaj, M., Davies, B., Fearn, S., Foster, C., Heck, A., Henderson, K., Hunt, T., Iannone, P., Kontorovich, I., Larson, N., Lowe, T., Meyer, J. C., O’Shea, A., Rowlett, P., Sikurajapathi, I., & Wong, T. (2022). A Collaboratively-Derived Research Agenda for E-assessment in Undergraduate Mathematics. _International Journal of Research in Undergraduate Mathematics Education_. <https://doi.org/10.1007/s40753-022-00189-6>
+
